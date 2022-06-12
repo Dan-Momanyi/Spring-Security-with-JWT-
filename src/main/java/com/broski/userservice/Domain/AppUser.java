@@ -3,7 +3,7 @@ package com.broski.userservice.Domain;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
+import javax.persistence.Id;
 import org.springframework.data.repository.cdi.Eager;
 
 import javax.persistence.Entity;
@@ -23,10 +23,10 @@ import static javax.persistence.GenerationType.AUTO;
 @AllArgsConstructor
 public class AppUser {
     @Id
-    @GeneratedValue(strategy =  AUTO)
+    @GeneratedValue(strategy = AUTO)
     private Long id;
     private String name;
-    private String userName;
+    private String username;
     private String password;
 
     //load a user at the same time their role

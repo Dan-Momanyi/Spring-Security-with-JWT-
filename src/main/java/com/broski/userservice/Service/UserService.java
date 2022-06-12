@@ -9,7 +9,7 @@ public interface UserService {
     //methods that will manage the users
     AppUser saveUser(AppUser user);
     Role saveRole(Role role);
-    void addRoleTOUser(String username, String roleName);
+    void addRoleToUser(String username, String rolename);
     AppUser getUser(String username);
     List<AppUser> getUsers();
 }

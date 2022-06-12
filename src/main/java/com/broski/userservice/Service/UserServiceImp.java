@@ -19,7 +19,7 @@ public class UserServiceImp implements UserService{
 
     @Override
     public AppUser saveUser(AppUser user) {
-        log.info("Saving new user {} into the database", user.getUserName());
+        log.info("Saving new user {} into the database", user.getName());
         return userRepo.save(user);
     }
 
@@ -30,18 +30,18 @@ public class UserServiceImp implements UserService{
     }
 
     @Override
-    public void addRoleTOUser(String username, String roleName) {
-        log.info("Adding new role {} to user {} in the database", roleName, username);
-        AppUser user = userRepo.findByUsername(username);
+    public void addRoleToUser(String userName, String roleName) {
+        log.info("Adding new role {} to user {} in the database", roleName, userName);
+        AppUser user = userRepo.findByUsername(userName);
         Role role = roleRepo.findByName(roleName);
         user.getRoles().add(role);
 
     }
 
     @Override
-    public AppUser getUser(String username) {
-        log.info("Fetching user {}", username);
-        return userRepo.findByUsername(username);
+    public AppUser getUser(String userName) {
+        log.info("Fetching user {}", userName);
+        return userRepo.findByUsername(userName);
     }
 
     @Override
